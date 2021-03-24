@@ -19,37 +19,25 @@ namespace FirstP
         private int _experience;
         public Сharacter(string name, Condition condition, Race race, bool ability_to_speak, bool ability_to_move, Gender gender, int age, int health_max, int health_now, int experience)
         {
-            _index++;// так?
-                     // Set_Index(index);// надо удалить скорее всего
-            Set_Name(name);
-            ForCondition(condition);
-            //Set_Condition(condition);
-            ForRace(race);
-            //Set_Raсe(race);
-            Set_Ability_to_speak(ability_to_speak);
-            Set_Ability_to_move(ability_to_move);
-            ForGender(gender);
-            //Set_Gender(gender);
-            Set_Age(age);
-            Set_Health_max(health_max);
-            Set_Health_now(health_now);
-            Set_Experience(experience);
+            _index++;
+            _name = name;//+
+            Set_Condition(condition);
+            Set_Race(race);
+            Set_Ability_to_speak(ability_to_speak);//+
+            Set_Ability_to_move(ability_to_move);//+
+            Set_Gender(gender);//
+            Set_Age(age);//
+            Set_Health_max(health_max);//
+            Set_Health_now(health_now);//
+            Set_Experience(experience);//
         }
         public int Get_Index()
         {
             return _index;
         }
-        public void Set_Index(int index)
-        {
-            _index = index;
-        }
         public string Get_Name()
         {
             return _name;
-        }
-        public void Set_Name(string name)
-        {
-            _name = name;
         }
         public string Get_Condition()
         {
@@ -62,32 +50,6 @@ namespace FirstP
         public string Get_Raсe()
         {
             return _raсe;
-        }
-        public void Set_Raсe(string raсe)
-        {
-            _raсe = raсe;
-            //static void ForRace(Race race, string _race)
-            //{
-
-            //    switch (race)
-            //    {
-            //        case Race.PERSON:
-            //            _race = "person";
-            //            break;
-            //        case Race.GNOME:
-            //            _race = "gnome";
-            //            break;
-            //        case Race.ELF:
-            //            _race = "elf";
-            //            break;
-            //        case Race.ORC:
-            //            _race = "orc";
-            //            break;
-            //        case Race.GOBLIN:
-            //            _race = "goblin";
-            //            break;
-            //    }
-            //}
         }
         public bool Get_Ability_to_speak()
         {
@@ -108,10 +70,6 @@ namespace FirstP
         public string Get_Gender()
         {
             return _gender;
-        }
-        public void Set_Gender(string gender)
-        {
-            _gender = gender;
         }
         public int Get_Age()
         {
@@ -145,97 +103,6 @@ namespace FirstP
         {
             _experience = experience;
         }
-
-        public int Index
-        {
-            get
-            {
-                return _index;
-            }
-            set => _index = value;
-        }
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set => _name = value;
-        }
-        public string Conditions
-        {
-            get
-            {
-                return _condition;
-            }
-            set => _condition = value;
-        }
-        private string Rases
-        {
-            get
-            {
-                return _raсe;
-            }
-            set => _raсe = value;
-        }
-        public bool Ability_to_speak
-        {
-            get
-            {
-                return _ability_to_speak;
-            }
-            set => _ability_to_speak = value;
-        }
-        public bool Ability_to_move
-        {
-            get
-            {
-                return _ability_to_move;
-            }
-            set => _ability_to_move = value;
-        }
-        private string Genders
-        {
-            get
-            {
-                return _gender;
-            }
-            set => _gender = value;
-        }
-        public int Age
-        {
-            get
-            {
-                return _age;
-            }
-            set => _age = value;
-        }
-        public int Health_max
-        {
-            get
-            {
-                return _health_max;
-            }
-            set => _health_max = value;
-        }
-        public int Health_now
-        {
-            get
-            {
-                return _health_now;
-            }
-            set => _health_now = value;
-        }
-        public int Experience
-        {
-            get
-            {
-                return _experience;
-            }
-            set => _experience = value;
-        }
-
-
         public enum Condition
         {
             NORMAL,
@@ -245,7 +112,7 @@ namespace FirstP
             PARALYZED,
             DEAD
         };
-        static void ForCondition(Condition condition)
+        public static void Set_Condition(Condition condition)
         {
             string _condition;
             switch (condition)
@@ -270,28 +137,6 @@ namespace FirstP
                     break;
             }
         }
-        //    public string GetCondition(Condition condition)
-        //{
-        //    Сharacter k;
-
-        //    if (k.Now_Condition = Сharacter.Condition.NORMAL)
-        //        return "normal";
-        //    if (condition == WEAKENED)
-        //        return ("weakened");
-        //    if (condition == SICK)
-        //        return "sick";
-        //    if (condition == POISONED)
-        //        return "poisoned";
-        //    if (condition == PARALYZED)
-        //        return "paralyzed";
-        //    if (condition == DEAD)
-        //        return "dead";
-        //}
-        public Condition Now_Condition
-        {
-            get;
-            set;
-        }
         public enum Race
         {
             PERSON,
@@ -300,7 +145,7 @@ namespace FirstP
             ORC,
             GOBLIN
         };
-        static void ForRace(Race race)
+        private static void Set_Race(Race race)
         {
             string _race;
             switch (race)
@@ -322,17 +167,12 @@ namespace FirstP
                     break;
             }
         }
-        public Race Now_Race
-        {
-            get;
-            set;
-        }
         public enum Gender
         {
             MALE,
             FEMALE
         };
-        static void ForGender(Gender gender)
+        private static void Set_Gender(Gender gender)
         {
             string _gender;
             switch (gender)
@@ -345,11 +185,14 @@ namespace FirstP
                     break;
             }
         }
-        public Gender Now_Gender
+        class Program
         {
-            get;
-            set;
-        }
+            static void Main(string[] args)
+            {
+                //Сharacter c = new Сharacter("Pudge", "normal", "male", true, true, "male", 40, 200, 190, 0);
 
+            }
+
+        }
     }
 }
