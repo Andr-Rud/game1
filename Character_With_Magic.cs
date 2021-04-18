@@ -59,7 +59,7 @@ namespace ClassCharacter
         {
             return base.ToString() + " mana_max: " + _mana_max + '\n' + " mana_now: " + _mana_now + '\n';
         }
-        public void Tell(Spell a, Character b, uint k)// дописать
+        public void Tell(Spell a, Character b, uint k)
         {
             a.To_perform_a_magical_effect(b, this, k);
         }

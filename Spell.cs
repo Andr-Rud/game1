@@ -9,7 +9,7 @@ namespace ClassCharacter
         private int _mana_min;
         private bool _verbal_component;
         private bool _motor_component;
-       public Spell(int mana_min, bool verbal_component, bool motor_component)//для заклинаний и артефактов, где не надо передавать некоторые их параметров(компоненты допустим), просто сделать констукторы под заклинание
+       public Spell(int mana_min, bool verbal_component, bool motor_component)
         {
             _mana_min = mana_min;
             _verbal_component = verbal_component;
