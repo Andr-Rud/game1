@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-//using map;
 
 namespace ClassCharacter
 {
@@ -16,7 +15,7 @@ namespace ClassCharacter
         private bool _ability_to_move;
         private string _gender;
         private uint _age;
-        private uint _health_max;//неотрицательная вел.
+        private uint _health_max;
         private uint _health_now;
         private uint _experience;
         private Dictionary<string, int> _inventory_non_renewable = new Dictionary<string, int>(4);
@@ -132,7 +131,6 @@ namespace ClassCharacter
         };
         public void Set_Condition(Condition condition)
         {
-            //string _condition;
             switch (condition)
             {
                 case Condition.NORMAL:
@@ -205,12 +203,14 @@ namespace ClassCharacter
         }
         public virtual new string ToString()
         {
+           // Console.ForegroundColor = ConsoleColor.Green;
             return "***********************" +
                 '\n' + " id: " + _index + '\n' + " name: " + _name + '\n' + " condition: " + _condition + '\n' +
                 " race: " + _raсe + '\n' + " ability to speak: " + _ability_to_speak + '\n' +
                 " ability to move: " + _ability_to_move + '\n' + " gender: " + _gender + '\n' + " age: " + _age + '\n' + " health_max: " +
                 _health_max + '\n' + " health now: " + _health_now + '\n' + " experience: " + _experience + '\n';
         }
+        //.................. get set finish
         private void Check_Condition()
         {
             if ((Get_Condition() == "normal") && (Get_Health_now() / Get_Health_max() < 0.1))
@@ -300,7 +300,7 @@ namespace ClassCharacter
             this.Throw_Away_The_Artefact(a);
             b.Pick_Up_An_Artefact(a);
         }
-        public void Use_Artefact(Artefact a, uint power)/////////////???????????????????????????????
+        public void Use_Artefact(Artefact a, Character b, uint power)
         {
             if (a.GetType().Name == "Living_Water_Bottle" && _inventory_non_renewable["living_water_bottle"] > 0)
             {
@@ -318,7 +318,8 @@ namespace ClassCharacter
             {
                 --_inventory_non_renewable["basilisk_eye"];
             }
-            ///...................... добавить реализацию метода
+            Character_With_Magic temp = new Character_With_Magic();
+            a.To_perform_a_magical_effect(b, temp, power);
         }
     }
 }

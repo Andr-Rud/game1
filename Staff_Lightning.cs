@@ -11,6 +11,7 @@ namespace ClassCharacter
         public Staff_Lightning(uint artefact_power_now, uint artefact_power_max) : base(artefact_power_now, true)
         {
             _artefact_power_max = artefact_power_max;
+            Thr();
         }
         public override void To_perform_a_magical_effect(Character a, Character_With_Magic b, uint impact_force)
         {
