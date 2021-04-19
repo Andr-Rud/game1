@@ -55,11 +55,18 @@ namespace ClassCharacter
             Console.WriteLine(hunter.ToString());
             Console.ResetColor();
 
-            Armor heavy_armor = new Armor(true, true, dark_knight, 10);
-            Armor light_armor = new Armor(true, true, hunter, 5);
-            Staff_Lightning emerald_staff = new Staff_Lightning(40, 40);
+            //Armor heavy_armor = new Armor(true, true, dark_knight, 10);
+            //Armor light_armor = new Armor(true, true, hunter, 5);
+            Staff_Lightning emerald_staff = new Staff_Lightning(20, 50);
             Frog_Legs_Decort f_legs = new Frog_Legs_Decort();
+            Add_Health heal = new Add_Health(true, true);
 
+
+            emerald_staff.To_perform_a_magical_effect(dark_knight, joker, 20);
+            Console.WriteLine($"evil joker hitted the knight with emerald staff by { dark_knight.Get_Health_max() - dark_knight.Get_Health_now() } hp");
+            uint old_health = dark_knight.Get_Health_now();
+            heal.To_perform_a_magical_effect(dark_knight, old_hermit, 20);
+            Console.WriteLine($"but the old hermit healed the dark knight by {dark_knight.Get_Health_now() - old_health }");
 
         }
     }
