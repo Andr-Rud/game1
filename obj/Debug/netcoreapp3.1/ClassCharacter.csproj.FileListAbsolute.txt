@@ -1,0 +1,13 @@
+C:\Users\Win10\source\repos\ClassCharacter\bin\Debug\netcoreapp3.1\ClassCharacter.exe
+C:\Users\Win10\source\repos\ClassCharacter\bin\Debug\netcoreapp3.1\ClassCharacter.deps.json
+C:\Users\Win10\source\repos\ClassCharacter\bin\Debug\netcoreapp3.1\ClassCharacter.runtimeconfig.json
+C:\Users\Win10\source\repos\ClassCharacter\bin\Debug\netcoreapp3.1\ClassCharacter.runtimeconfig.dev.json
+C:\Users\Win10\source\repos\ClassCharacter\bin\Debug\netcoreapp3.1\ClassCharacter.dll
+C:\Users\Win10\source\repos\ClassCharacter\bin\Debug\netcoreapp3.1\ClassCharacter.pdb
+C:\Users\Win10\source\repos\ClassCharacter\obj\Debug\netcoreapp3.1\ClassCharacter.csprojAssemblyReference.cache
+C:\Users\Win10\source\repos\ClassCharacter\obj\Debug\netcoreapp3.1\ClassCharacter.AssemblyInfoInputs.cache
+C:\Users\Win10\source\repos\ClassCharacter\obj\Debug\netcoreapp3.1\ClassCharacter.AssemblyInfo.cs
+C:\Users\Win10\source\repos\ClassCharacter\obj\Debug\netcoreapp3.1\ClassCharacter.csproj.CoreCompileInputs.cache
+C:\Users\Win10\source\repos\ClassCharacter\obj\Debug\netcoreapp3.1\ClassCharacter.dll
+C:\Users\Win10\source\repos\ClassCharacter\obj\Debug\netcoreapp3.1\ClassCharacter.pdb
+C:\Users\Win10\source\repos\ClassCharacter\obj\Debug\netcoreapp3.1\ClassCharacter.genruntimeconfig.cache
