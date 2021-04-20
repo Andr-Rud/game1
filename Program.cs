@@ -33,7 +33,7 @@ namespace ClassCharacter
                 }
             }
             */
-
+            Console.WriteLine("Long time ago there were some heros who lived peacfully in a distant land... But everything changed when the joker decided to fiscinate the kingdom. The brave knight come to help the old queen...");
             Character worker_John = new Character("worker John", Character.Condition.NORMAL, Character.Race.ORC, true, true, Character.Gender.MALE, 35, 150, 130, 30);
             Character old_queen = new Character("old queen", Character.Condition.PARALYZED, Character.Race.PERSON, true, false, Character.Gender.FEMALE, 92, 100, 50, 200);
             Character dark_knight = new Character("dark knight", Character.Condition.NORMAL, Character.Race.PERSON, false, true, Character.Gender.MALE, 40, 100, 100, 70);
@@ -57,17 +57,37 @@ namespace ClassCharacter
 
             //Armor heavy_armor = new Armor(true, true, dark_knight, 10);
             //Armor light_armor = new Armor(true, true, hunter, 5);
-            Staff_Lightning emerald_staff = new Staff_Lightning(20, 50);
+            Staff_Lightning emerald_staff = new Staff_Lightning(20, 20);
             Frog_Legs_Decort f_legs = new Frog_Legs_Decort();
             Add_Health heal = new Add_Health(true, true);
+            Basilisk_Eye b_eye = new Basilisk_Eye();
+            Wither_Away w_away = new Wither_Away(true, true);
+            Cure cure = new Cure(true, true);
 
+            joker.Pick_Up_An_Artefact(emerald_staff);
+            joker.Learn(cure);
+            old_hermit.Learn(heal);
 
-            emerald_staff.To_perform_a_magical_effect(dark_knight, joker, 20);
-            Console.WriteLine($"evil joker hitted the knight with emerald staff by { dark_knight.Get_Health_max() - dark_knight.Get_Health_now() } hp");
+            Console.Write("Evil joker is going to hit the knight with emerald staff by ");
+            int hp = Console.Read();
+            emerald_staff.To_perform_a_magical_effect(dark_knight, joker, (uint)(hp));
+            Console.WriteLine($"And the dark knight lost { dark_knight.Get_Health_max() - dark_knight.Get_Health_now() } hp");
             uint old_health = dark_knight.Get_Health_now();
-            heal.To_perform_a_magical_effect(dark_knight, old_hermit, 20);
-            Console.WriteLine($"but the old hermit healed the dark knight by {dark_knight.Get_Health_now() - old_health }");
-
+            //heal.To_perform_a_magical_effect(dark_knight, old_hermit, (uint)(hp));
+            old_hermit.Tell(heal, dark_knight, 20);
+            Console.WriteLine($"But the old hermit healed the dark knight by {dark_knight.Get_Health_now() - old_health }");
+            Console.WriteLine("So the joker is going to restore his strength...");
+            for(int i = 0; i < 20; i++)
+            {
+                Thread.Sleep(1000);
+                Console.WriteLine($"Current staff power: {emerald_staff.Get_Artefact_power()}");
+                if(emerald_staff.Get_Artefact_power() == emerald_staff.Get_Artefact_Power_Max())
+                {
+                    Console.WriteLine("The staff is full powered!");
+                }
+            }
+            Console.WriteLine("...and paralized worker John with cure spell");
+            joker.Tell(cure, worker_John, 20);
         }
     }
 }
