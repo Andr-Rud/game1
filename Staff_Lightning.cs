@@ -13,7 +13,7 @@ namespace ClassCharacter
             _artefact_power_max = artefact_power_max;
             Thr();
         }
-        public override void To_perform_a_magical_effect(Character a, Character_With_Magic b, uint impact_force)
+        public override void To_perform_a_magical_effect(Character a, Character_With_Magic b, uint impact_force = 1)
         {
             if (impact_force < this.Get_Artefact_power())
             {

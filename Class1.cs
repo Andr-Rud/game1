@@ -34,6 +34,7 @@ namespace ClassCharacter
             Set_Age(age);
             Set_Health_max(health_max);
             Set_Health_now(health_now);
+            Check_Condition();
             Set_Experience(experience);
             _inventory_non_renewable.Add("living_water_bottle", 0);
             _inventory_non_renewable.Add("dead_water_bottle", 0);
@@ -213,11 +214,11 @@ namespace ClassCharacter
         //.................. get set finish
         private void Check_Condition()
         {
-            if ((Get_Condition() == "normal") && (Get_Health_now() / Get_Health_max() < 0.1))
+            if ((Get_Health_now() / Get_Health_max() < 0.1))
             {
                 this.Set_Condition(Condition.SICK);
             }
-            if ((Get_Condition() == "sick") && (Get_Health_now() / Get_Health_max() >= 0.1))
+            if ((Get_Health_now() / Get_Health_max() >= 0.1))
             {
                 this.Set_Condition(Condition.NORMAL);
             }
